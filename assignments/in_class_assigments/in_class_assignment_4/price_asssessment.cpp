@@ -23,21 +23,32 @@ using namespace std;
 
 int main(){
 
-  int colonial_cost = 0;
-  int colonial_sq_ft;
+  double colonial_cost = 250000;
+  double colonial_sq_ft = 2500;
+  double colonial_cost_per_ft = colonial_cost / colonial_sq_ft;
 
-  int split_cost;
-  int split_sq_ft;
+  double split_cost = 200000;
+  double split_sq_ft = 1800;
+  double split_cost_per_ft = split_cost / split_sq_ft;
 
-  int single_cost;
-  int single_sq_ft;
+  double single_cost = 150000;
+  double single_sq_ft = 1500;
+  double single_cost_per_ft = single_cost / single_sq_ft;
 
-  cout << "What is the cost of the colonial home?";
-  cin >> colonial_cost;
-  do {
-    cout << "What is the cost of the colonial home?";
-    cin >> colonial_cost;
-  } while(colonial_cost == 0);
-  
-cout << "anus";
+  // I gave up on hard coding the many relationships
+  if((colonial_cost_per_ft < split_cost_per_ft) && (colonial_cost_per_ft < single_cost_per_ft)){
+    cout << "\nThe colonial is the cheapest! The price per square foot for the colonial house is: $" << colonial_cost_per_ft;
+  } else if((split_cost_per_ft < colonial_cost_per_ft) && (split_cost_per_ft < colonial_cost_per_ft)){
+    cout << "\nThe split is the cheapest! The price per square foot for the split house is: $" << split_cost_per_ft;
+  } else if((single_cost_per_ft < split_cost_per_ft) && (single_cost_per_ft < colonial)){
+    cout << "\nThe single is the cheapest! The price per square foot for the single is: $" << single_cost_per_ft;
+  } else if(colonial_cost_per_ft == split_cost_per_ft == single_cost_per_ft){
+    cout << "\nThey are all the same price! $" << single_cost_per_ft;
+  } else {
+    cout << "\nPotentially improper data, please check your values and try again\n";
+  }
+
+
+
+
 }
