@@ -17,7 +17,6 @@
 // Determine which type is cheapest per sq ft
 
 #include <iostream>
-// #include <>
 
 using namespace std;
 
@@ -35,7 +34,7 @@ int main(){
   double single_sq_ft = 1500;
   double single_cost_per_ft = single_cost / single_sq_ft;
 
-  // I gave up on hard coding the many relationships
+  // I gave up on hard coding the many relationships and I understand why you had us do it! Things can get really messy
   if((colonial_cost_per_ft < split_cost_per_ft) && (colonial_cost_per_ft < single_cost_per_ft)){
     cout << "\nThe colonial is the cheapest! The price per square foot for the colonial house is: $" << colonial_cost_per_ft;
   } else if((split_cost_per_ft < colonial_cost_per_ft) && (split_cost_per_ft < colonial_cost_per_ft)){
@@ -47,8 +46,4 @@ int main(){
   } else {
     cout << "\nPotentially improper data, please check your values and try again\n";
   }
-
-
-
-
 }
